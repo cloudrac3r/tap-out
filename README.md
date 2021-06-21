@@ -1,18 +1,33 @@
-# tap-out
+> this is a fork of [scottcorgan/tap-out](https://github.com/scottcorgan/tap-out), which is no-longer maintained [¹](https://github.com/scottcorgan/tap-out/pull/46)
 
-A different tap parser
+<div align="center">
+  <img src="https://cloud.githubusercontent.com/assets/399657/23590290/ede73772-01aa-11e7-8915-181ef21027bc.png" />
 
-## Install
+  <div>parse the output of a tap test</div>
+  
+  <!-- npm version -->
+  <a href="https://npmjs.org/package/tap-in">
+    <img src="https://img.shields.io/npm/v/tap-in.svg?style=flat-square" />
+  </a>
+  
+  <!-- file size -->
+  <a href="https://unpkg.com/tap-in/builds/tap-in.min.js">
+    <img src="https://badge-size.herokuapp.com/spencermountain/compromise/master/plugins/dates/builds/tap-in.min.js" />
+  </a>
+</div>
 
-```
-npm install tap-out --save
-```
+<div align="center">
+  <code>npm install tap-in</code>
+    <!-- <div>by <a href="https://github.com/spencermountain">Spencer Kelly</a></div> -->
+  <hr/>
+</div>
 
-## Usage
+<!-- spacer -->
+<img height="15px" src="https://user-images.githubusercontent.com/399657/68221862-17ceb980-ffb8-11e9-87d4-7b30b6488f16.png"/>
 
-**CLI**
+## CLI API
 
-```
+```js
 $ something-that-produces-tap | tap-out
 {
   tests: [
@@ -35,23 +50,23 @@ $ something-that-produces-tap | tap-out
 }
 ```
 
-**API**
+### JS API
 
 ```js
-var tapOut = require('tap-out');
+var tapOut = require('tap-out')
 
 var t = tapOut(function (output) {
-
-  console.log(output);
-});
+  console.log(output)
+})
 
 t.on('assert', function (assert) {
+  // Do something
+})
 
-	// Do something
-});
-
-process.stdin.pipe(t);
+process.stdin.pipe(t)
 ```
+
+---
 
 ## Methods
 
@@ -91,10 +106,10 @@ Example output
 
 Parsed test object with details.
 
-* `type` - value will always be `test`
-* `name` - name of the test
-* `raw` - the raw output before it was parsed
-* `number` - the number of the test
+- `type` - value will always be `test`
+- `name` - name of the test
+- `raw` - the raw output before it was parsed
+- `number` - the number of the test
 
 ```js
 {
@@ -109,12 +124,12 @@ Parsed test object with details.
 
 Parsed assert object details.
 
-* `type` - this will always be `assert`
-* `name` - the name of the assertion
-* `raw` - the raw output before it was parsed
-* `number` - the number of the assertion
-* `ok` - whether the assertion passed or failed
-* `test` - the number of the test this assertion belongs to
+- `type` - this will always be `assert`
+- `name` - the name of the assertion
+- `raw` - the raw output before it was parsed
+- `number` - the number of the assertion
+- `ok` - whether the assertion passed or failed
+- `test` - the number of the test this assertion belongs to
 
 ```js
 {
@@ -131,8 +146,8 @@ Parsed assert object details.
 
 Parsed version data.
 
-* `type` - this will always be `version`
-* `raw` - the raw output before it was parsed
+- `type` - this will always be `version`
+- `raw` - the raw output before it was parsed
 
 ```js
 {
@@ -145,10 +160,10 @@ Parsed version data.
 
 Parsed test result data for tests, pass, fail.
 
-* `type` - this will always be `result`
-* `name` - the name of the result
-* `raw` - the raw output before it was parsed
-* `count` - the number of tests related to this result
+- `type` - this will always be `result`
+- `name` - the name of the result
+- `raw` - the raw output before it was parsed
+- `count` - the number of tests related to this result
 
 Tests
 
@@ -195,9 +210,9 @@ Failed assertion that has passed with details. The assertion formate is the same
 
 Generic output like `console.log()` in your tests.
 
-* `type` - this will always be `comment`
-* `raw` - the raw output before it was parsed
-* `test` - the number of the test this comment belongs to
+- `type` - this will always be `comment`
+- `raw` - the raw output before it was parsed
+- `test` - the number of the test this comment belongs to
 
 ```js
 {
@@ -207,10 +222,4 @@ Generic output like `console.log()` in your tests.
 }
 ```
 
-## Run Tests
-
-```
-git clone git@github.com:scottcorgan/tap-out.git && cd tap-out
-npm install
-npm test
-```
+MIT
