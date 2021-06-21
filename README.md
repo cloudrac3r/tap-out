@@ -1,13 +1,15 @@
 <!-- spacer -->
 <img height="15px" src="https://user-images.githubusercontent.com/399657/68221862-17ceb980-ffb8-11e9-87d4-7b30b6488f16.png"/>
 
-> this is an updated fork of [scottcorgan/tap-out](https://github.com/scottcorgan/tap-out), which is no-longer maintained [¹](https://github.com/scottcorgan/tap-out/pull/46) [²](https://github.com/scottcorgan/tap-out/pull/32)
-> this library should be a seamless update from tap-out
+> this is an updated fork of [scottcorgan/tap-out](https://github.com/scottcorgan/tap-out), which is no-longer maintained [¹](https://github.com/scottcorgan/tap-out/pull/46) [²](https://github.com/scottcorgan/tap-out/pull/32) <br/>
+> this library should be a non-breaking, no-sweat update.
+
+<img height="15px" src="https://user-images.githubusercontent.com/399657/68221862-17ceb980-ffb8-11e9-87d4-7b30b6488f16.png"/>
 
 <div align="center">
   <img src="https://cloud.githubusercontent.com/assets/399657/23590290/ede73772-01aa-11e7-8915-181ef21027bc.png" />
 
-  <div>parse the output of a tap test</div>
+  <div>parse tap test output into JSON</div>
   
   <!-- npm version -->
   <a href="https://npmjs.org/package/tap-in">
@@ -29,8 +31,8 @@
 <!-- spacer -->
 <img height="25px" src="https://user-images.githubusercontent.com/399657/68221862-17ceb980-ffb8-11e9-87d4-7b30b6488f16.png"/>
 
-[Tap](https://node-tap.org/) _('Test Anything Arotocol')_ is a neat text-based format for outputting testing results.
-It looks like this:
+**[TAP](https://node-tap.org/)** _('Test Anything Protocol')_ is a text-based format for software testing
+It looks something like this:
 
 ```
 1..4
@@ -40,7 +42,10 @@ ok 3 - Read the rest of the file
 not ok 4 - Summarized correctly # TODO Not written yet
 ```
 
-This library turns this text-format into JSON, so test-reporters can do clever things with the output data.
+It's pretty-cool, and is very-heavily adopted. <br/>
+This library parses this text-out into JSON, so test-reporters can do clever things with the output data more easily.
+
+<img height="45px" src="https://user-images.githubusercontent.com/399657/68221862-17ceb980-ffb8-11e9-87d4-7b30b6488f16.png"/>
 
 ## CLI API
 
@@ -69,7 +74,9 @@ $ something-that-produces-tap | tap-in
 }
 ```
 
-### JS API
+<img height="45px" src="https://user-images.githubusercontent.com/399657/68221862-17ceb980-ffb8-11e9-87d4-7b30b6488f16.png"/>
+
+## JS API
 
 ```js
 var tapIn = require('tap-in')
@@ -85,7 +92,11 @@ t.on('assert', function (assert) {
 process.stdin.pipe(t)
 ```
 
+<img height="25px" src="https://user-images.githubusercontent.com/399657/68221862-17ceb980-ffb8-11e9-87d4-7b30b6488f16.png"/>
+
 ---
+
+<img height="25px" src="https://user-images.githubusercontent.com/399657/68221862-17ceb980-ffb8-11e9-87d4-7b30b6488f16.png"/>
 
 ## Methods
 
@@ -240,5 +251,18 @@ Generic output like `console.log()` in your tests.
   test: 1
 }
 ```
+
+<img height="45px" src="https://user-images.githubusercontent.com/399657/68221862-17ceb980-ffb8-11e9-87d4-7b30b6488f16.png"/>
+
+PRs are welcome! This library is maintained by [Spencer Kelly](https://github.com/spencermountain/)
+
+### See Also
+
+- [tapjs/tap-parser](https://github.com/tapjs/tap-parser)
+- [node-tap](https://github.com/tapjs/node-tap) - a TAP - outputter
+- [substack/tape](https://github.com/substack/tape)
+- [substack/testling](https://github.com/substack/testling)
+
+Thank you to [feross/re-emitter](https://github.com/feross/re-emitter)
 
 MIT
