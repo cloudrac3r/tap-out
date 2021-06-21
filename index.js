@@ -115,17 +115,15 @@ Parser.prototype.handleLine = function handleLine(line) {
       this.emit('pass', parsed)
     }
   }
+  // This is all so we can determine if the "# ok" output on the last line
+  // should be skipped
+  const isOkLine = line === '# ok' && this.previousLine.indexOf('# pass') > -1
 
-  if (!isOkLine(this.previousLine)) {
+  if (!isOkLine) {
     this.emit(parsed.type, parsed)
     this.results[parsed.type + 's'].push(parsed)
   }
 
-  // This is all so we can determine if the "# ok" output on the last line
-  // should be skipped
-  function isOkLine(previousLine) {
-    return line === '# ok' && previousLine.indexOf('# pass') > -1
-  }
   this.previousLine = line
 }
 
@@ -179,7 +177,8 @@ Parser.prototype._handleError = function _handleError(line) {
     if (m[0] === 'at') {
       // Example string: Object.async.eachSeries (/Users/scott/www/modules/nash/node_modules/async/lib/async.js:145:20)
 
-      msg = msg.split(' ')[1].replace('(', '').replace(')', '')
+      msg = msg.split(' ')[1] || ''
+      msg = msg.replace('(', '').replace(')', '')
 
       let values = msg.split(':')
       let file = values.slice(0, values.length - 2).join(':')
@@ -267,7 +266,6 @@ module.exports = function (done) {
       if (!data) {
         return
       }
-
       let line = data.toString()
       parser.handleLine(line)
     })

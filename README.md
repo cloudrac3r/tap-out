@@ -27,8 +27,10 @@
 
 ## CLI API
 
+this library exports a CLI command `tap-in`, that you can use with a pipe
+
 ```js
-$ something-that-produces-tap | tap-out
+$ something-that-produces-tap | tap-in
 {
   tests: [
     { name: 'is true', number: 1, raw: '# is true', type: 'test' }
@@ -53,9 +55,9 @@ $ something-that-produces-tap | tap-out
 ### JS API
 
 ```js
-var tapOut = require('tap-out')
+var tapIn = require('tap-in')
 
-var t = tapOut(function (output) {
+var t = tapIn(function (output) {
   console.log(output)
 })
 
@@ -70,7 +72,7 @@ process.stdin.pipe(t)
 
 ## Methods
 
-### var t = tapOut(function (err, output) {})
+### var t = tapIn(function (err, output) {})
 
 Returns a stream that emits events with various TAP data. Takes a callback which is called when all parsing is done.
 

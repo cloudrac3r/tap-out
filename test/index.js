@@ -641,3 +641,63 @@ test('output with plan end and assertion number mismatch', function (t) {
   })
   p.end()
 })
+
+test('results with test containing #+word+number', function (t) {
+  t.plan(4)
+  let mockTap = ['# word 7', '# tests 15', '# pass  13', '# fail  2']
+  let p = parser()
+  let results = []
+  p.on('result', function (result) {
+    results.push(result)
+  })
+
+  p.on('test', function (res) {
+    t.deepEqual(
+      res,
+      {
+        type: 'test',
+        name: 'word 7',
+        raw: '# word 7',
+        number: 1,
+      },
+      'test is parsed'
+    )
+  })
+
+  p.on('output', function () {
+    t.deepEqual(
+      results[0],
+      {
+        count: '15',
+        name: 'tests',
+        raw: '# tests 15',
+        type: 'result',
+      },
+      'tests'
+    )
+    t.deepEqual(
+      results[1],
+      {
+        count: '13',
+        name: 'pass',
+        raw: '# pass  13',
+        type: 'result',
+      },
+      'pass'
+    )
+    t.deepEqual(
+      results[2],
+      {
+        count: '2',
+        name: 'fail',
+        raw: '# fail  2',
+        type: 'result',
+      },
+      'fail'
+    )
+  })
+  mockTap.forEach(function (line) {
+    p.write(line + '\n')
+  })
+  p.end()
+})

@@ -1,5 +1,5 @@
 {
-  "name": "tap-out",
+  "name": "tap-in",
   "version": "3.1.0",
   "description": "parse tap test output",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "test": "tape test/index.js"
   },
   "bin": {
-    "tap-out": "bin/cmd.js"
+    "tap-in": "bin/cmd.js"
   },
   "author": "Scott Corgan & Spencer Kelly",
   "license": "MIT",
