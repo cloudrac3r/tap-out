@@ -85,31 +85,28 @@ more often, a test-reporter will want to do something custom with the output:
 ```js
 const tapIn = require('tap-in')
 
-let t = tapIn(function (json) {
-  // callback when finished (optional)
-  console.log(json)
+let t = tapIn((err, json) => {
+  console.log(json) // callback when finished
 })
 
 // or some event-based logic
-t.on('pass', function (assert) {
+t.on('pass', assert => {
   console.log('✓')
 })
-t.on('fail', function (assert) {
+t.on('fail', assert => {
   console.log(`✗ ${assert.name}`)
 })
 
 process.stdin.pipe(t)
 ```
 
+`tapIn` returns a **_stream_** that emits events with various TAP data. It takes an optional callback which is called when all parsing is done.
+
 <img height="25px" src="https://user-images.githubusercontent.com/399657/68221862-17ceb980-ffb8-11e9-87d4-7b30b6488f16.png"/>
 
 ---
 
 <img height="25px" src="https://user-images.githubusercontent.com/399657/68221862-17ceb980-ffb8-11e9-87d4-7b30b6488f16.png"/>
-
-### var t = tapIn(function (err, output) {})
-
-Returns a stream that emits events with various TAP data. Takes a callback which is called when all parsing is done.
 
 ## Events
 
@@ -272,6 +269,6 @@ PRs are welcome! This library is maintained by [Spencer Kelly](https://github.co
 - [substack/tape](https://github.com/substack/tape)
 - [substack/testling](https://github.com/substack/testling)
 
-Thank you to [feross/re-emitter](https://github.com/feross/re-emitter)
+Thank you to [feross/re-emitter](https://github.com/feross/re-emitter) and [Scott Corgan](https://github.com/scottcorgan/)
 
 MIT
