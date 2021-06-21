@@ -1,7 +1,7 @@
 <!-- spacer -->
 <img height="15px" src="https://user-images.githubusercontent.com/399657/68221862-17ceb980-ffb8-11e9-87d4-7b30b6488f16.png"/>
 
-> this is a grateful-fork of [scottcorgan/tap-out](https://github.com/scottcorgan/tap-out), which is no-longer maintained [¹](https://github.com/scottcorgan/tap-out/pull/46) [²](https://github.com/scottcorgan/tap-out/pull/32) <br/>
+> this is a grateful fork of [scottcorgan/tap-out](https://github.com/scottcorgan/tap-out), which is no-longer maintained [¹](https://github.com/scottcorgan/tap-out/pull/46) [²](https://github.com/scottcorgan/tap-out/pull/32) <br/>
 > this library should be a non-breaking, no-sweat update.
 
 <img height="15px" src="https://user-images.githubusercontent.com/399657/68221862-17ceb980-ffb8-11e9-87d4-7b30b6488f16.png"/>
@@ -42,12 +42,14 @@ ok 3 - Read the rest of the file
 not ok 4 - Summarized correctly # TODO Not written yet
 ```
 
-It's pretty-cool, and is very-heavily adopted. <br/>
-This library parses this text-out into JSON, so test-reporters can do clever things with the output data more easily.
+It's pretty-cool format, and is very-heavily used.<br/>
+This library parses this text into JSON, so test-reporters can do clever things with the output data more easily.
+
+it offers a command-line script, and a javascript API:
 
 <img height="45px" src="https://user-images.githubusercontent.com/399657/68221862-17ceb980-ffb8-11e9-87d4-7b30b6488f16.png"/>
 
-## CLI API
+## CLI
 
 this library exports a CLI command `tap-in`, that you can use with a pipe
 
@@ -78,15 +80,22 @@ $ something-that-produces-tap | tap-in
 
 ## JS API
 
+more often, a test-reporter will want to do something custom with the output:
+
 ```js
 const tapIn = require('tap-in')
 
-let t = tapIn(function (output) {
-  console.log(output)
+let t = tapIn(function (json) {
+  // callback when finished (optional)
+  console.log(json)
 })
 
-t.on('assert', function (assert) {
-  // Do something
+// or some event-based logic
+t.on('pass', function (assert) {
+  console.log('✓')
+})
+t.on('fail', function (assert) {
+  console.log(`✗ ${assert.name}`)
 })
 
 process.stdin.pipe(t)
@@ -252,9 +261,9 @@ Generic output like `console.log()` in your tests.
 
 <img height="45px" src="https://user-images.githubusercontent.com/399657/68221862-17ceb980-ffb8-11e9-87d4-7b30b6488f16.png"/>
 
----
-
 PRs are welcome! This library is maintained by [Spencer Kelly](https://github.com/spencermountain/)
+
+---
 
 ### See Also
 
