@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-const tapInto = require('../src')
+const tapIn = require('../src')
 
-let parser = tapInto(function (err, output) {
+let parser = tapIn(function (err, output) {
   if (err) {
     throw err
   }

@@ -1,3 +1,3 @@
-const tapInto = require('./index')
-// const tapInto = require('./builds/tap-into.min.js')
-console.log(tapInto)
+const tapIn = require('./index')
+// const tapIn = require('./builds/tap-in.min.js')
+console.log(tapIn)

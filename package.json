@@ -1,5 +1,5 @@
 {
-  "name": "tap-into",
+  "name": "tap-in",
   "version": "3.2.0",
   "author": "Scott Corgan & Spencer Kelly",
   "description": "turn tap test output into JSON",
@@ -10,7 +10,7 @@
     "build": "rollup -c --silent"
   },
   "bin": {
-    "tap-into": "bin/tap-into.js"
+    "tap-in": "bin/tap-in.js"
   },
   "sideEffects": false,
   "exports": {
@@ -24,12 +24,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/spencermountain/tap-into.git"
+    "url": "https://github.com/spencermountain/tap-in.git"
   },
   "bugs": {
-    "url": "https://github.com/spencermountain/tap-into/issues"
+    "url": "https://github.com/spencermountain/tap-in/issues"
   },
-  "homepage": "https://github.com/spencermountain/tap-into",
+  "homepage": "https://github.com/spencermountain/tap-in",
   "keywords": [
     "tap",
     "parser",

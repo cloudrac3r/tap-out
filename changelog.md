@@ -5,7 +5,6 @@
 
 #### 3.2.0
 
-- rename library to `tap-into` (from tap-in)
 - small refactor
 - add modern package.json properties
 

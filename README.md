@@ -12,18 +12,18 @@
   <div>parse tap test output into JSON</div>
   
   <!-- npm version -->
-  <a href="https://npmjs.org/package/tap-into">
-    <img src="https://img.shields.io/npm/v/tap-into.svg?style=flat-square" />
+  <a href="https://npmjs.org/package/tap-in">
+    <img src="https://img.shields.io/npm/v/tap-in.svg?style=flat-square" />
   </a>
   
   <!-- file size -->
-  <!-- <a href="https://unpkg.com/tap-into/builds/tap-into.min.js">
-    <img src="https://badge-size.herokuapp.com/spencermountain/compromise/master/plugins/dates/builds/tap-into.min.js" />
+  <!-- <a href="https://unpkg.com/tap-in/builds/tap-in.min.js">
+    <img src="https://badge-size.herokuapp.com/spencermountain/compromise/master/plugins/dates/builds/tap-in.min.js" />
   </a> -->
 </div>
 
 <div align="center">
-  <code>npm install tap-into</code>
+  <code>npm install tap-in</code>
     <!-- <div>by <a href="https://github.com/spencermountain">Spencer Kelly</a></div> -->
   <hr/>
 </div>
@@ -49,10 +49,10 @@ This library parses this text-out into JSON, so test-reporters can do clever thi
 
 ## CLI API
 
-this library exports a CLI command `tap-into`, that you can use with a pipe
+this library exports a CLI command `tap-in`, that you can use with a pipe
 
 ```js
-$ something-that-produces-tap | tap-into
+$ something-that-produces-tap | tap-in
 {
   tests: [
     { name: 'is true', number: 1, raw: '# is true', type: 'test' }
@@ -79,9 +79,9 @@ $ something-that-produces-tap | tap-into
 ## JS API
 
 ```js
-const tapInto = require('tap-into')
+const tapIn = require('tap-in')
 
-let t = tapInto(function (output) {
+let t = tapIn(function (output) {
   console.log(output)
 })
 
@@ -98,7 +98,7 @@ process.stdin.pipe(t)
 
 <img height="25px" src="https://user-images.githubusercontent.com/399657/68221862-17ceb980-ffb8-11e9-87d4-7b30b6488f16.png"/>
 
-### var t = tapInto(function (err, output) {})
+### var t = tapIn(function (err, output) {})
 
 Returns a stream that emits events with various TAP data. Takes a callback which is called when all parsing is done.
 
