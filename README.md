@@ -12,18 +12,18 @@
   <div>parse tap test output into JSON</div>
   
   <!-- npm version -->
-  <a href="https://npmjs.org/package/tap-in">
-    <img src="https://img.shields.io/npm/v/tap-in.svg?style=flat-square" />
+  <a href="https://npmjs.org/package/tap-into">
+    <img src="https://img.shields.io/npm/v/tap-into.svg?style=flat-square" />
   </a>
   
   <!-- file size -->
-  <!-- <a href="https://unpkg.com/tap-in/builds/tap-in.min.js">
-    <img src="https://badge-size.herokuapp.com/spencermountain/compromise/master/plugins/dates/builds/tap-in.min.js" />
+  <!-- <a href="https://unpkg.com/tap-into/builds/tap-into.min.js">
+    <img src="https://badge-size.herokuapp.com/spencermountain/compromise/master/plugins/dates/builds/tap-into.min.js" />
   </a> -->
 </div>
 
 <div align="center">
-  <code>npm install tap-in</code>
+  <code>npm install tap-into</code>
     <!-- <div>by <a href="https://github.com/spencermountain">Spencer Kelly</a></div> -->
   <hr/>
 </div>
@@ -49,10 +49,10 @@ This library parses this text-out into JSON, so test-reporters can do clever thi
 
 ## CLI API
 
-this library exports a CLI command `tap-in`, that you can use with a pipe
+this library exports a CLI command `tap-into`, that you can use with a pipe
 
 ```js
-$ something-that-produces-tap | tap-in
+$ something-that-produces-tap | tap-into
 {
   tests: [
     { name: 'is true', number: 1, raw: '# is true', type: 'test' }
@@ -79,9 +79,9 @@ $ something-that-produces-tap | tap-in
 ## JS API
 
 ```js
-var tapIn = require('tap-in')
+const tapInTo = require('tap-into')
 
-var t = tapIn(function (output) {
+let t = tapInTo(function (output) {
   console.log(output)
 })
 
@@ -100,7 +100,7 @@ process.stdin.pipe(t)
 
 ## Methods
 
-### var t = tapIn(function (err, output) {})
+### var t = tapInTo(function (err, output) {})
 
 Returns a stream that emits events with various TAP data. Takes a callback which is called when all parsing is done.
 

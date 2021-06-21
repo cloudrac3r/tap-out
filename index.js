@@ -5,7 +5,6 @@ const util = require('util')
 const EventEmitter = require('events').EventEmitter
 const reemit = require('re-emitter')
 
-// const expr = require('./lib/utils/regexes')
 const parseLine = require('./lib/parse-line')
 const error = require('./lib/error')
 

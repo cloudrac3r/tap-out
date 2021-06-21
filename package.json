@@ -1,16 +1,38 @@
 {
-  "name": "tap-in",
-  "version": "3.1.0",
-  "description": "parse tap test output",
+  "name": "tap-into",
+  "version": "3.2.0",
+  "author": "Scott Corgan & Spencer Kelly",
+  "description": "turn tap test output into JSON",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
-    "test": "tape test/index.js"
+    "test": "tape test/*.test.js "
   },
   "bin": {
-    "tap-in": "bin/cmd.js"
+    "tap-into": "bin/cmd.js"
   },
-  "author": "Scott Corgan & Spencer Kelly",
-  "license": "MIT",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "require": "./index.js",
+      "default": "./index.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spencermountain/tap-into.git"
+  },
+  "bugs": {
+    "url": "https://github.com/spencermountain/tap-into/issues"
+  },
+  "homepage": "https://github.com/spencermountain/tap-into",
+  "keywords": [
+    "tap",
+    "parser",
+    "tape",
+    "tap-spec",
+    "test"
+  ],
   "dependencies": {
     "re-emitter": "1.1.4",
     "readable-stream": "2.3.7",
@@ -23,19 +45,5 @@
   "directories": {
     "test": "test"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/spencermountain/tap-in.git"
-  },
-  "keywords": [
-    "tap",
-    "parser",
-    "tape",
-    "tap-spec",
-    "test"
-  ],
-  "bugs": {
-    "url": "https://github.com/spencermountain/tap-in/issues"
-  },
-  "homepage": "https://github.com/spencermountain/tap-in"
+  "license": "MIT"
 }
