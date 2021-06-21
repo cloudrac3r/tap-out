@@ -354,7 +354,7 @@ test('plan', function (t) {
 // NOTE: comments output the same as test names.
 // This makes it very difficult to parse them.
 // Ignoring them for now. Just don't use comments.
-test('comments')
+// test('comments')
 
 test('generic output', function (t) {
   const mockTap = [
