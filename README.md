@@ -98,8 +98,6 @@ process.stdin.pipe(t)
 
 <img height="25px" src="https://user-images.githubusercontent.com/399657/68221862-17ceb980-ffb8-11e9-87d4-7b30b6488f16.png"/>
 
-## Methods
-
 ### var t = tapInto(function (err, output) {})
 
 Returns a stream that emits events with various TAP data. Takes a callback which is called when all parsing is done.

@@ -42,7 +42,7 @@ Parser.prototype._handleError = handleError
 
 Parser.prototype._handleEnd = handleEnd
 
-module.exports = function (done) {
+const factory = function (done) {
   done = done || function () {}
 
   let stream = new PassThrough()
@@ -69,5 +69,7 @@ module.exports = function (done) {
 
   return stream
 }
+// include this in the exports, too
+factory.Parser = Parser
 
-module.exports.Parser = Parser
+module.exports = factory
