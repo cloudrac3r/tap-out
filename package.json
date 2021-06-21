@@ -3,10 +3,10 @@
   "version": "3.2.0",
   "author": "Scott Corgan & Spencer Kelly",
   "description": "turn tap test output into JSON",
-  "main": "index.js",
+  "main": "./src/index.js",
   "type": "commonjs",
   "scripts": {
-    "test": "tape test/*.test.js "
+    "test": "tape tests/*.test.js "
   },
   "bin": {
     "tap-into": "bin/cmd.js"
@@ -14,9 +14,12 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "require": "./index.js",
-      "default": "./index.js"
+      "require": "./src/index.js",
+      "default": "./src/index.js"
     }
+  },
+  "engines": {
+    "node": ">=8.0.0"
   },
   "repository": {
     "type": "git",

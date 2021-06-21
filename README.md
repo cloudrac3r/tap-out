@@ -79,9 +79,9 @@ $ something-that-produces-tap | tap-into
 ## JS API
 
 ```js
-const tapInTo = require('tap-into')
+const tapInto = require('tap-into')
 
-let t = tapInTo(function (output) {
+let t = tapInto(function (output) {
   console.log(output)
 })
 
@@ -100,7 +100,7 @@ process.stdin.pipe(t)
 
 ## Methods
 
-### var t = tapInTo(function (err, output) {})
+### var t = tapInto(function (err, output) {})
 
 Returns a stream that emits events with various TAP data. Takes a callback which is called when all parsing is done.
 
