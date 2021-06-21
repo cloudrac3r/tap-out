@@ -1,5 +1,10 @@
 const parseLine = require('./parse')
-const { isErrorOutputEnd, isRawTapTestStatus } = require('./fns')
+const { isErrorOutputEnd } = require('./fns')
+
+const isRawTapTestStatus = function (str) {
+  let rawTapTestStatusRegex = new RegExp('(\\d+)(\\.)(\\.)(\\d+)')
+  return rawTapTestStatusRegex.exec(str)
+}
 
 function handleLine(line) {
   let parsed = parseLine(line)

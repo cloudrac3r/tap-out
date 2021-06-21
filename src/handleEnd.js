@@ -1,4 +1,19 @@
-const { error, isFailAssertionLine, firstAssertion, lastAssertion } = require('./fns')
+const { isFailAssertionLine } = require('./fns')
+
+const error = function (message) {
+  return {
+    type: 'error',
+    message: message,
+  }
+}
+
+const firstAssertion = function (first, assert) {
+  return assert.number < first.number ? assert : first
+}
+
+const lastAssertion = function (last, assert) {
+  return assert.number > last.number ? assert : last
+}
 
 const handleEnd = function () {
   let plan = this.results.plans.length ? this.results.plans[0] : null

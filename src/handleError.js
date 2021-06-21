@@ -1,5 +1,17 @@
 const trim = require('trim')
-const { isFailAssertionLine, isErrorOutputStart, isErrorOutputEnd, splitFirst } = require('./fns')
+const { isFailAssertionLine, isErrorOutputEnd } = require('./fns')
+
+const splitFirst = function (str, pattern) {
+  let parts = str.split(pattern)
+  if (parts.length <= 1) {
+    return parts
+  }
+  return [parts[0], parts.slice(1).join(pattern)]
+}
+
+const isErrorOutputStart = function (line) {
+  return line.indexOf('  ---') === 0
+}
 
 const handleError = function (line) {
   let lastAssert
