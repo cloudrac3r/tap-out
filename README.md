@@ -1,7 +1,7 @@
 <!-- spacer -->
 <img height="15px" src="https://user-images.githubusercontent.com/399657/68221862-17ceb980-ffb8-11e9-87d4-7b30b6488f16.png"/>
 
-> this is an updated fork of [scottcorgan/tap-out](https://github.com/scottcorgan/tap-out), which is no-longer maintained [¹](https://github.com/scottcorgan/tap-out/pull/46) [²](https://github.com/scottcorgan/tap-out/pull/32) <br/>
+> this is a grateful-fork of [scottcorgan/tap-out](https://github.com/scottcorgan/tap-out), which is no-longer maintained [¹](https://github.com/scottcorgan/tap-out/pull/46) [²](https://github.com/scottcorgan/tap-out/pull/32) <br/>
 > this library should be a non-breaking, no-sweat update.
 
 <img height="15px" src="https://user-images.githubusercontent.com/399657/68221862-17ceb980-ffb8-11e9-87d4-7b30b6488f16.png"/>
@@ -17,9 +17,9 @@
   </a>
   
   <!-- file size -->
-  <a href="https://unpkg.com/tap-in/builds/tap-in.min.js">
+  <!-- <a href="https://unpkg.com/tap-in/builds/tap-in.min.js">
     <img src="https://badge-size.herokuapp.com/spencermountain/compromise/master/plugins/dates/builds/tap-in.min.js" />
-  </a>
+  </a> -->
 </div>
 
 <div align="center">
@@ -253,6 +253,8 @@ Generic output like `console.log()` in your tests.
 ```
 
 <img height="45px" src="https://user-images.githubusercontent.com/399657/68221862-17ceb980-ffb8-11e9-87d4-7b30b6488f16.png"/>
+
+---
 
 PRs are welcome! This library is maintained by [Spencer Kelly](https://github.com/spencermountain/)
 
