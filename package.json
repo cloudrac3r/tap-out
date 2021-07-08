@@ -1,13 +1,12 @@
 {
   "name": "tap-in",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "author": "Scott Corgan & Spencer Kelly",
   "description": "turn tap test output into JSON",
   "main": "./src/index.js",
   "type": "commonjs",
   "scripts": {
-    "test": "tape tests/*.test.js",
-    "build": "rollup -c --silent"
+    "test": "tape tests/*.test.js"
   },
   "bin": {
     "tap-in": "bin/tap-in.js"

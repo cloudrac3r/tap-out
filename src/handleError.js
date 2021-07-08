@@ -43,11 +43,11 @@ const handleError = function (line) {
   }
   // Append to stack
   else if (this.writingErrorStackOutput) {
-    this.tmpErrorOutput += trim(line) + '\n'
+    this.tmpErrorOutput += trim(line || '') + '\n'
   }
   // Not the beginning of the error message but it's the body
   else if (this.writingErrorOutput) {
-    let m = splitFirst(trim(line), ':')
+    let m = splitFirst(trim(line || ''), ':')
     lastAssert = this.results.fail[this.results.fail.length - 1]
 
     // Rebuild raw error output
@@ -84,15 +84,15 @@ const handleError = function (line) {
 
       // Need to set this value
       if (m[0] === 'actual') {
-        lastAssert.error.actual = trim(m[1])
+        lastAssert.error.actual = trim(m[1] || '')
       }
     }
 
     // outputting expected/actual object or array
     if (this.currentNextLineError) {
-      lastAssert.error[this.currentNextLineError] = trim(line)
+      lastAssert.error[this.currentNextLineError] = trim(line || '')
       this.currentNextLineError = null
-    } else if (trim(m[1]) === '|-') {
+    } else if (trim(m[1] || '') === '|-') {
       this.currentNextLineError = m[0]
     } else {
       lastAssert.error[m[0]] = msg

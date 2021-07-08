@@ -3,6 +3,10 @@
 
 -->
 
+#### 3.2.1
+
+- guard against undefined in trim method
+
 #### 3.2.0
 
 - small refactor
