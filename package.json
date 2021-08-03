@@ -6,7 +6,7 @@
   "main": "./src/index.js",
   "type": "commonjs",
   "scripts": {
-    "test": "tape tests/*.test.js"
+    "test": "npx tape tests/*.test.js"
   },
   "bin": {
     "tap-in": "bin/tap-in.js"
