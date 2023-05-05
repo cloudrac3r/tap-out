@@ -1,4 +1,4 @@
-const PassThrough = require('readable-stream/passthrough')
+const PassThrough = require('stream').PassThrough
 const EventEmitter = require('events').EventEmitter
 const split = require('split')
 const util = require('util')

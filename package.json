@@ -1,5 +1,5 @@
 {
-  "name": "tap-in",
+  "name": "tap-out",
   "version": "3.2.1",
   "author": "Scott Corgan & Spencer Kelly",
   "description": "turn tap test output into JSON",
@@ -38,12 +38,8 @@
   ],
   "dependencies": {
     "re-emitter": "1.1.4",
-    "readable-stream": "2.3.7",
-    "split": "1.0.1",
-    "trim": "1.0.1"
-  },
-  "devDependencies": {
-    "tape": "5.2.2"
+    "readable-stream": "^4.3.0",
+    "split": "^1.0.1"
   },
   "directories": {
     "test": "tests"
